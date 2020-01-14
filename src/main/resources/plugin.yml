@@ -1,0 +1,9 @@
+name: AliasPro
+main: AliasPro.Main
+version: 1.0.0
+api: 1.0.0
+author: iAtomPlaza
+permissions:
+  alias.set:
+    description: allows player to set his/her alias on the server
+    default: op
