@@ -17,7 +17,7 @@ public class DatabaseHandler {
     }
 
     public static void update(String query, String key, String value) {
-        NukkitDB.updateDocument(query, "uuid", key.toLowerCase(), value, Main.getInstance().getConfig().getString("database"), Main.getInstance().getConfig().getString("collection"));
+        NukkitDB.updateDocument(query, "uuid", key, value, Main.getInstance().getConfig().getString("database"), Main.getInstance().getConfig().getString("collection"));
     }
 
 }

@@ -24,7 +24,7 @@ public class AliasCommand extends PluginCommand {
                 if (args.length == 1) {
                     Player player = (Player) sender;
                     String uuid = player.getUniqueId().toString();
-                    DatabaseHandler.update("uuid", "alias", args[0]);
+                    DatabaseHandler.update(uuid, "alias", args[0]);
                     player.setDisplayName(args[0]);
                     player.setNameTag(args[0]);
                     player.sendMessage("Set Alias/nickname to: "+args[0]);
