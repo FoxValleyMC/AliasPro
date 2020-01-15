@@ -19,7 +19,7 @@ public class Main extends PluginBase {
     @Override
     public void onEnable() {
         this.saveDefaultConfig();
-        this.getServer().getPluginManager().registerEvents(new JoinEvent(this), this);
+        this.getServer().getPluginManager().registerEvents(new JoinEvent(), this);
     }
 
     public static Main getInstance() {

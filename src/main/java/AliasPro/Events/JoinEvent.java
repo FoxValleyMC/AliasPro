@@ -7,29 +7,25 @@ import cn.nukkit.event.EventHandler;
 import cn.nukkit.event.Listener;
 import cn.nukkit.event.player.PlayerJoinEvent;
 import cn.nukkit.utils.TextFormat;
-import org.bson.Document;
+
+import java.util.HashMap;
+import java.util.Map;
 
 public class JoinEvent implements Listener {
-
-    private Main plugin;
-
-    public JoinEvent(Main plugin) {
-        this.plugin = plugin;
-    }
 
     @EventHandler()
     public void onJoin(PlayerJoinEvent event) {
         Player player = event.getPlayer();
         String uuid = player.getUniqueId().toString();
 
-        Document query = DatabaseHandler.query(uuid, "uuid");
+        Map<String, Object> query = DatabaseHandler.query(uuid, "uuid");
         if (query == null) {
-            Document document = new Document();
-            document.append("uuid", uuid);
-            document.append("alias", player.getName());
-            DatabaseHandler.createNew(document);
+            Map<String, Object> objectMap = new HashMap<String, Object>();
+            objectMap.put("uuid", uuid);
+            objectMap.put("alias", player.getName());
+            DatabaseHandler.createNew(objectMap);
         } else {
-            String alias = query.getString("alias");
+            String alias = query.get("alias").toString();
             player.setDisplayName(alias);
             player.setNameTag(alias);
             event.setJoinMessage(TextFormat.YELLOW + alias + " joined the game");
