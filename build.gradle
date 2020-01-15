@@ -12,16 +12,12 @@ repositories {
         url "http://repo.nukkitx.com/main/"
     }
     maven {
-        url "https://mvnrepository.com/artifact/org.mongodb/bson"
-    }
-    maven {
         url "https://jitpack.io"
     }
 }
 
 dependencies {
     implementation "cn.nukkit:nukkit:1.0-SNAPSHOT"
-    implementation "org.mongodb:bson:3.11.0"
     implementation "com.github.TimelessMC:NukkitDB:2f1a19fd8183c4f59f9295a6af111f168c047e3b"
 }
 
