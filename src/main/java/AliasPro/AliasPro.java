@@ -15,7 +15,7 @@ public class AliasPro {
     }
 
     public static Map<String, Object> getPlayer (String name) {
-        return DatabaseHandler.query(name, "name");
+        return DatabaseHandler.query(name, "alias");
     }
 
 }
