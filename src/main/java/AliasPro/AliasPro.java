@@ -14,13 +14,8 @@ public class AliasPro {
         return DatabaseHandler.query(uuid, "uuid").get("alias").toString();
     }
 
-    public static String getPlayer (String name) {
-        Map<String, Object> objectMap = DatabaseHandler.query(name, "name");
-        if (objectMap == null) {
-            return null;
-        } else {
-            return objectMap.get("uuid").toString();
-        }
+    public static Map<String, Object> getPlayer (String name) {
+        return DatabaseHandler.query(name, "name");
     }
 
 }
