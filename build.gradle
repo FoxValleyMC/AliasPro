@@ -18,7 +18,7 @@ repositories {
 
 dependencies {
     implementation "cn.nukkit:nukkit:1.0-SNAPSHOT"
-    implementation "com.github.TimelessMC:NukkitDB:13ca0796f8fef7e1f07139ac62712c317a692f74"
+    implementation "com.github.FoxValleyMC:NukkitDB:Master-SNAPSHOT"
 }
 
 
